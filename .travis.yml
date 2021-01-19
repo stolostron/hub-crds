@@ -11,12 +11,6 @@ go:
 services:
   - docker
 
-addons:
-  sonarcloud:
-    organization: "open-cluster-management"
-    token:
-      secure: "ENCRYPTED_TOKEN"
-
 env:
   global:
     # Required
