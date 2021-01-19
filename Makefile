@@ -28,7 +28,7 @@ else
 endif
 
 REGISTRY ?= quay.io/rhibmcollab
-IMG ?= hub-crds
+IMG ?= multiclusterhub-crds
 VERSION ?= latest
 
 image:

@@ -4,10 +4,6 @@
 os:
   - linux
 
-language: go
-go:
-  - "1.15.x"
-
 services:
   - docker
 
@@ -42,7 +38,7 @@ jobs:
           make security/scans
     - stage: release-ff
       name: "Push commits to current release branch"
-      if: type = push AND branch =~ /^master$/
+      if: type = push AND branch =~ /^main$/
       script:
         - make
         - make release-ff
