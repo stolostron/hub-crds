@@ -1,4 +1,6 @@
-# hub-crds
+# MultiClusterHub CRDs
+
+Central location for CRDs used by Multiclusterhub components. This repo provides CRDs for the [multiclusterhub-operator installer](https://github.com/open-cluster-management/multicloudhub-operator).
 
 ## CRD chart sources
 Original locations of CRDs
