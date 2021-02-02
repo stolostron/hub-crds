@@ -38,18 +38,11 @@ spec:
         spec:
           description: SearchOperatorSpec defines the desired state of SearchOperator
           properties:
-            nodeselector:
-              properties:
-                customlabelselector:
-                  type: string
-                customlabelvalue:
-                  type: string
-                enabled:
-                  type: boolean
-                os:
-                  type: string
-              required:
-              - enabled
+            nodeSelector:
+              additionalProperties:
+                type: string
+              description: NodeSelector causes all components to be scheduled on nodes
+                with matching labels.
               type: object
             pullpolicy:
               type: string
