@@ -1,6 +1,5 @@
-#
-# Sample .travis.yml using the mvp-helloworld image (a helmoperator)
-#
+# Copyright Contributors to the Open Cluster Management project
+
 os:
   - linux
 

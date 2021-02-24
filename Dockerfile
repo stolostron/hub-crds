@@ -1,3 +1,5 @@
+# Copyright Contributors to the Open Cluster Management project
+
 FROM registry.access.redhat.com/ubi8/ubi-minimal:latest
 
 LABEL org.label-schema.vendor="Red Hat" \
