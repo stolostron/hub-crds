@@ -1,3 +1,5 @@
+# Copyright Contributors to the Open Cluster Management project
+
 # GITHUB_USER containing '@' char must be escaped with '%40'
 GITHUB_USER := $(shell echo $(GITHUB_USER) | sed 's/@/%40/g')
 
@@ -40,4 +42,6 @@ push:
 # local builds a docker image and runs it locally
 local:
 	docker build -t "$(IMG):$(VERSION)" . && docker run -it --rm "$(IMG):$(VERSION)"
-	
+
+set-copyright:
+	@bash ./scripts/set-copyright.sh

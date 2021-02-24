@@ -1,5 +1,7 @@
 # Copyright (c) 2020 Red Hat, Inc.
 
+# Copyright Contributors to the Open Cluster Management project
+
 # Dynamic user preference data
 # The CR will be created with the name of the user who will access the information
 # CR will hold info such as saved searches, homepage, search history etc.
