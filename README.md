@@ -3,9 +3,10 @@
 # WORK IN PROGRESS
 
 We are in the process of enabling this repo for community contribution. See wiki [here](https://open-cluster-management.io/concepts/architecture/).
+
 # MultiClusterHub CRDs
 
-Central location for CRDs used by Multiclusterhub components. This repo provides CRDs for the [multiclusterhub-operator installer](https://github.com/open-cluster-management/multicloudhub-operator).
+Central location for CRDs used by Multiclusterhub components. This repo provides CRDs for the [multiclusterhub-operator installer](https://github.com/open-cluster-management/multicloudhub-operator). Updating CRDs in this repo will trigger an update in the installer repo to point to the latest version.
 
 ## CRD chart sources
 Original locations of CRDs
