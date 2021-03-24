@@ -2,3 +2,7 @@
 
 set-copyright:
 	@bash ./scripts/set-copyright.sh
+
+.PHONY: lint
+lint:
+	@bash ./scripts/lint.sh
