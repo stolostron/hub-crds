@@ -16,6 +16,9 @@ https://github.com/open-cluster-management/rcm-chart
 - 0000_01_addon.open-cluster-management.io_managedclusteraddons.crd.yaml
 - agent.open-cluster-management.io_klusterletaddonconfigs_crd.yaml
 
+https://github.com/open-cluster-management/cluster-lifecycle-chart
+- cluster.open-cluster-management.io_clustercurators.yaml
+
 https://github.com/open-cluster-management/cert-manager-chart
 - certificate-crd.yaml
 - certificate-resource-crd.yaml
