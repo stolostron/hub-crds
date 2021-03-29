@@ -13,7 +13,6 @@ spec:
     shortNames:
     - plc
     singular: policy
-  preserveUnknownFields: true
   scope: Namespaced
   versions:
   - name: v1

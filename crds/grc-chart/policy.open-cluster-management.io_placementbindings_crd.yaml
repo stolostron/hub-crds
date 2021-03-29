@@ -13,7 +13,6 @@ spec:
     shortNames:
     - pb
     singular: placementbinding
-  preserveUnknownFields: true
   scope: Namespaced
   versions:
   - name: v1
