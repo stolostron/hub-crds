@@ -3,8 +3,6 @@ kind: CustomResourceDefinition
 metadata:
   name: placementbindings.policy.open-cluster-management.io
 spec:
-  conversion:
-    strategy: None
   group: policy.open-cluster-management.io
   names:
     kind: PlacementBinding
@@ -62,9 +60,3 @@ spec:
     storage: true
     subresources:
       status: {}
-status:
-  acceptedNames:
-    kind: ""
-    plural: ""
-  conditions: []
-  storedVersions: []
