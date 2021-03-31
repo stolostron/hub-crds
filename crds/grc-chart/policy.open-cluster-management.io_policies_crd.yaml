@@ -3,8 +3,6 @@ kind: CustomResourceDefinition
 metadata:
   name: policies.policy.open-cluster-management.io
 spec:
-  conversion:
-    strategy: None
   group: policy.open-cluster-management.io
   names:
     kind: Policy
@@ -84,6 +82,7 @@ spec:
                       type: array
                     templateMeta:
                       type: object
+                      x-kubernetes-preserve-unknown-fields: true
                   type: object
                 type: array
               placement:
@@ -127,9 +126,3 @@ spec:
     storage: true
     subresources:
       status: {}
-status:
-  acceptedNames:
-    kind: ""
-    plural: ""
-  conditions: []
-  storedVersions: []
