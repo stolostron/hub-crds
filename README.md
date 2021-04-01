@@ -40,7 +40,6 @@ https://github.com/open-cluster-management/console-chart
 
 https://github.com/open-cluster-management/multicloudhub-operator (foundation/OCM)
 - view.open-cluster-management.io_managedclusterviews_crd.yaml
-- cluster.open-cluster-management.io_mirroredmanagedclusters.yaml
 - internal.open-cluster-management.io_managedclusterinfos_crd.yaml
 - inventory.open-cluster-management.io_baremetalassets_crd.yaml
 - action.open-cluster-management.io_managedclusteractions_crd.yaml
