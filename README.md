@@ -12,8 +12,6 @@ Central location for CRDs used by Multiclusterhub components. This repo provides
 Original locations of CRDs
 
 https://github.com/open-cluster-management/rcm-chart
-- 0000_00_addon.open-cluster-management.io_clustermanagementaddons.crd.yaml
-- 0000_01_addon.open-cluster-management.io_managedclusteraddons.crd.yaml
 - agent.open-cluster-management.io_klusterletaddonconfigs_crd.yaml
 
 https://github.com/open-cluster-management/cluster-lifecycle-chart
