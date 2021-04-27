@@ -17,14 +17,6 @@ https://github.com/open-cluster-management/rcm-chart
 https://github.com/open-cluster-management/cluster-lifecycle-chart
 - cluster.open-cluster-management.io_clustercurators.yaml
 
-https://github.com/open-cluster-management/cert-manager-chart
-- certificate-crd.yaml
-- certificate-resource-crd.yaml
-- challenge-crd.yaml
-- clusterissuer-crd.yaml
-- issuer-crd.yaml
-- order-crd.yaml
-
 https://github.com/open-cluster-management/grc-chart
 - policy.open-cluster-management.io_placementbindings_crd.yaml
 - policy.open-cluster-management.io_policies_crd.yaml
