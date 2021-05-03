@@ -26,6 +26,7 @@ def updateCRDs(repo, operator):
 
    if bundlePath == "":
       print("Unable to find given channel: " +  operator["channel"] + " in package.yaml: " + operator["package-yml"])
+      exit(1)
    
    for filename in os.listdir(bundlePath):
       if not filename.endswith(".yaml"): 
