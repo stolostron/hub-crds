@@ -1,0 +1,10 @@
+
+- repo_name: "community-operators"
+  github_ref: "https://github.com/operator-framework/community-operators.git"
+  operators:
+    - name: "assisted-service-operator"
+      channel: "ocm-2.3"
+      package-yml: "community-operators/assisted-service-operator/assisted-service.package.yaml"
+    # - name: "hive-operator"
+    #   channel: "ocm-2.3"
+    #   package-yml: "community-operators/hive-operator/hive.package.yaml"
