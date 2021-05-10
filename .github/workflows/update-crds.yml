@@ -25,8 +25,8 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
-        with:
-          token: ${{ secrets.NATHANWEATHERLY }}
+        # with:
+        #   token: ${{ secrets.NATHANWEATHERLY }}
       - name: Set up Python ${{ matrix.python-version }}
         uses: actions/setup-python@v2
         with:
@@ -50,5 +50,4 @@ jobs:
           commit_user_name: GitHub Actions
           commit_user_email: noreply@github.com
           commit_author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
-          push_options: --force   
-    
+          # push_options: --force
