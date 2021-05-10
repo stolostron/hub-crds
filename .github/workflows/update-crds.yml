@@ -51,4 +51,3 @@ jobs:
           commit_user_email: noreply@github.com
           commit_author: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>
           # push_options: --force
-    
