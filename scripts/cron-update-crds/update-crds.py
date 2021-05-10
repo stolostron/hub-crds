@@ -44,7 +44,7 @@ def updateCRDs(repo, operator):
 
 
 def main():
-   community_operatorsYml = "scripts/cron-update-crds/crds.yaml"
+   community_operatorsYml = "scripts/cron-update-crds/crds.yml"
    with open(community_operatorsYml, 'r') as f:
       community_operators = yaml.safe_load(f)
    
