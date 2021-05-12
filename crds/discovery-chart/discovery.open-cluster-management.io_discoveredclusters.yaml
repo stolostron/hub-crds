@@ -38,6 +38,8 @@ spec:
               activityTimestamp:
                 format: date-time
                 type: string
+              apiUrl:
+                type: string
               cloudProvider:
                 type: string
               console:
@@ -115,6 +117,7 @@ spec:
               status:
                 type: string
             required:
+            - apiUrl
             - displayName
             - isManagedCluster
             - name
