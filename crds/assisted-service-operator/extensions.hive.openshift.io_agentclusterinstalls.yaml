@@ -75,24 +75,36 @@ spec:
                   description: AgentMachinePool is a pool of machines to be installed.
                   properties:
                     hyperthreading:
+                      default: Enabled
                       description: Hyperthreading determines the mode of hyperthreading that machines in the pool will utilize. Default is for hyperthreading to be enabled.
                       enum:
                       - ""
                       - Enabled
                       - Disabled
                       type: string
+                    name:
+                      description: Name is the name of the machine pool. For the control plane machine pool, the name will always be "master". For the compute machine pools, the only valid name is "worker".
+                      type: string
+                  required:
+                  - name
                   type: object
                 type: array
               controlPlane:
                 description: ControlPlane is the configuration for the machines that comprise the control plane.
                 properties:
                   hyperthreading:
+                    default: Enabled
                     description: Hyperthreading determines the mode of hyperthreading that machines in the pool will utilize. Default is for hyperthreading to be enabled.
                     enum:
                     - ""
                     - Enabled
                     - Disabled
                     type: string
+                  name:
+                    description: Name is the name of the machine pool. For the control plane machine pool, the name will always be "master". For the compute machine pools, the only valid name is "worker".
+                    type: string
+                required:
+                - name
                 type: object
               imageSetRef:
                 description: ImageSetRef is a reference to a ClusterImageSet. The release image specified in the ClusterImageSet will be used to install the cluster.
@@ -214,6 +226,13 @@ spec:
               controlPlaneAgentsReady:
                 description: ControlPlaneAgentsDiscovered is the number of Agents currently linked to this ClusterDeployment that are ready for use.
                 type: integer
+              debugInfo:
+                description: DebugInfo includes information for debugging the installation process.
+                properties:
+                  eventsURL:
+                    description: EventsURL specifies an HTTP/S URL that contains events which occured during the cluster installation process
+                    type: string
+                type: object
               workerAgentsDiscovered:
                 description: WorkerAgentsDiscovered is the number of worker Agents currently linked to this ClusterDeployment.
                 type: integer
