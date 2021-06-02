@@ -32,4 +32,4 @@ https://github.com/open-cluster-management/multiclusterhub-operator (foundation/
 - view.open-cluster-management.io_managedclusterviews_crd.yaml
 - internal.open-cluster-management.io_managedclusterinfos_crd.yaml
 - inventory.open-cluster-management.io_baremetalassets_crd.yaml
-- action.open-cluster-management.io_managedclusteractions_crd.yaml
+- action.open-cluster-management.io_managedclusteractions_crd.yaml 
