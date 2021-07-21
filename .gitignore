@@ -9,3 +9,5 @@ build-harness-extensions
 !vbh/.build-harness-vendorized
 !vbh/build-harness
 !vbh/build-harness-extensions
+
+tmp/
