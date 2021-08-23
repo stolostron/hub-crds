@@ -4,6 +4,7 @@ build-harness
 build-harness-extensions
 .build-harness
 .build-harness-bootstrap
+.idea
 
 # override build harness vendoring
 !vbh/.build-harness-vendorized
