@@ -3,7 +3,7 @@
   github_ref: "https://github.com/redhat-openshift-ecosystem/community-operators-prod.git"
   operators:
     - name: "assisted-service-operator"
-      channel: "ocm-2.3"
+      channel: "ocm-2.4"
       package-yml: "operators/assisted-service-operator/assisted-service.package.yaml"
     # - name: "hive-operator"
     #   channel: "ocm-2.3"
