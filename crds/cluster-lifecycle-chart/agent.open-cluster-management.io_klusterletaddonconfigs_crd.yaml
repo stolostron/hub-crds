@@ -5,6 +5,9 @@
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.5.0
+  creationTimestamp: null
   name: klusterletaddonconfigs.agent.open-cluster-management.io
 spec:
   group: agent.open-cluster-management.io
@@ -18,18 +21,13 @@ spec:
   - name: v1
     schema:
       openAPIV3Schema:
-        description: KlusterletAddonConfig is the Schema for the klusterletaddonconfigs
-          API
+        description: KlusterletAddonConfig is the Schema for the klusterletaddonconfigs API
         properties:
           apiVersion:
-            description: 'APIVersion defines the versioned schema of this representation
-              of an object. Servers should convert recognized schemas to the latest
-              internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
+            description: 'APIVersion defines the versioned schema of this representation of an object. Servers should convert recognized schemas to the latest internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
             type: string
           kind:
-            description: 'Kind is a string value representing the REST resource this
-              object represents. Servers may infer this from the endpoint the client
-              submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
+            description: 'Kind is a string value representing the REST resource this object represents. Servers may infer this from the endpoint the client submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
             type: string
           metadata:
             type: object
@@ -37,8 +35,7 @@ spec:
             description: KlusterletAddonConfigSpec defines the desired state of KlusterletAddonConfig
             properties:
               applicationManager:
-                description: KlusterletAddonConfigApplicationManagerSpec defines configuration
-                  for the ApplicationManager component
+                description: KlusterletAddonConfigApplicationManagerSpec defines configuration for the ApplicationManager component
                 properties:
                   argocdCluster:
                     type: boolean
@@ -48,8 +45,7 @@ spec:
                 - enabled
                 type: object
               certPolicyController:
-                description: KlusterletAddonConfigCertPolicyControllerSpec defines
-                  configuration for the CertPolicyController component
+                description: KlusterletAddonConfigCertPolicyControllerSpec defines configuration for the CertPolicyController component
                 properties:
                   enabled:
                     type: boolean
@@ -70,8 +66,7 @@ spec:
                 description: used for dev work only
                 type: string
               iamPolicyController:
-                description: KlusterletAddonConfigIAMPolicyControllerSpec defines
-                  configuration for the IAMPolicyController component
+                description: KlusterletAddonConfigIAMPolicyControllerSpec defines configuration for the IAMPolicyController component
                 properties:
                   enabled:
                     type: boolean
@@ -81,8 +76,7 @@ spec:
               imageNamePostfix:
                 type: string
               imagePullPolicy:
-                description: PullPolicy describes a policy for if/when to pull a container
-                  image
+                description: PullPolicy describes a policy for if/when to pull a container image
                 enum:
                 - Always
                 - Never
@@ -93,9 +87,12 @@ spec:
                 type: string
               imageRegistry:
                 type: string
+              nodeSelector:
+                additionalProperties:
+                  type: string
+                type: object
               policyController:
-                description: KlusterletAddonConfigPolicyControllerSpec defines configuration
-                  for the PolicyController component
+                description: KlusterletAddonConfigPolicyControllerSpec defines configuration for the PolicyController component
                 properties:
                   enabled:
                     type: boolean
@@ -103,8 +100,7 @@ spec:
                 - enabled
                 type: object
               searchCollector:
-                description: KlusterletAddonConfigSearchCollectorSpec defines configuration
-                  for the SearchCollector component
+                description: KlusterletAddonConfigSearchCollectorSpec defines configuration for the SearchCollector component
                 properties:
                   enabled:
                     type: boolean
@@ -124,11 +120,16 @@ spec:
             - searchCollector
             type: object
           status:
-            description: KlusterletAddonConfigStatus defines the observed state of
-              KlusterletAddonConfig
+            description: KlusterletAddonConfigStatus defines the observed state of KlusterletAddonConfig
             type: object
         type: object
     served: true
     storage: true
     subresources:
       status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []
