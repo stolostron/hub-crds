@@ -34,7 +34,3 @@ https://github.com/open-cluster-management/multiclusterhub-operator (foundation/
 - inventory.open-cluster-management.io_baremetalassets_crd.yaml
 - action.open-cluster-management.io_managedclusteractions_crd.yaml 
 - imageregistry.open-cluster-management.io_managedclusterimageregistries.yaml
-
-https://github.com/backube/volsync/tree/main/helm/volsync/crds
-- volsync.backube_replicationdestinations.yaml
-- volsync.backube_replicationsources.yaml
