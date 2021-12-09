@@ -1,6 +1,11 @@
+
+---
 apiVersion: apiextensions.k8s.io/v1
 kind: CustomResourceDefinition
 metadata:
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.6.1
+  creationTimestamp: null
   name: policies.policy.open-cluster-management.io
 spec:
   group: policy.open-cluster-management.io
@@ -52,13 +57,21 @@ spec:
                     objectDefinition:
                       type: object
                       x-kubernetes-preserve-unknown-fields: true
+                  required:
+                  - objectDefinition
                   type: object
                 type: array
               remediationAction:
                 description: RemediationAction describes weather to enforce or inform
+                enum:
+                - Inform
+                - inform
+                - Enforce
+                - enforce
                 type: string
             required:
             - disabled
+            - policy-templates
             type: object
           status:
             description: PolicyStatus defines the observed state of Policy
@@ -110,6 +123,8 @@ spec:
                             type: string
                         type: object
                       type: array
+                    placement:
+                      type: string
                     placementBinding:
                       type: string
                     placementRule:
@@ -131,8 +146,17 @@ spec:
                   type: object
                 type: array
             type: object
+        required:
+        - metadata
+        - spec
         type: object
     served: true
     storage: true
     subresources:
       status: {}
+status:
+  acceptedNames:
+    kind: ""
+    plural: ""
+  conditions: []
+  storedVersions: []
