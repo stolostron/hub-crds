@@ -18,7 +18,7 @@ jobs:
         uses: peter-evans/repository-dispatch@v1.1.3
         with:
           token: ${{ secrets.HUB_OPERATOR_TOKEN }}
-          repository: open-cluster-management/multiclusterhub-operator
+          repository: stolostron/multiclusterhub-operator
           event-type: crd-change
           client-payload: '{"ref": "${{ github.ref }}", "sha": "${{ github.sha }}", "repository": "${{ github.repository }}"}'
           
