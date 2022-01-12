@@ -40,6 +40,10 @@ spec:
                 type: string
               policies:
                 items:
+<<<<<<< HEAD
+                  minLength: 1
+=======
+>>>>>>> 9edbc5f (add crd for policyset to grc-chart (#90))
                   type: string
                 type: array
             required:
