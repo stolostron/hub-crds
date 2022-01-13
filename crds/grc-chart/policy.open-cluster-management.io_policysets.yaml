@@ -40,6 +40,7 @@ spec:
                 type: string
               policies:
                 items:
+                  minLength: 1
                   type: string
                 type: array
             required:
