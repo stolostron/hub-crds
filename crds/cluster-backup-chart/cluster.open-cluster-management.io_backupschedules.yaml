@@ -45,10 +45,6 @@ spec:
           spec:
             description: BackupScheduleSpec defines the desired state of BackupSchedule
             properties:
-              maxBackups:
-                description: Maximum number of scheduled backups after which the old
-                  backups are being removed
-                type: integer
               veleroSchedule:
                 description: Schedule is a Cron expression defining when to run the
                   Velero Backup
@@ -59,7 +55,6 @@ spec:
                   the maximum default value set by velero is used - 720h
                 type: string
             required:
-            - maxBackups
             - veleroSchedule
             type: object
           status:
@@ -386,6 +381,13 @@ spec:
                                   to an element of matchExpressions, whose key field
                                   is "key", the operator is "In", and the values array
                                   contains only "value". The requirements are ANDed.
+                                type: object
+                            type: object
+                          metadata:
+                            properties:
+                              labels:
+                                additionalProperties:
+                                  type: string
                                 type: object
                             type: object
                           orderedResources:
@@ -772,6 +774,13 @@ spec:
                                   contains only "value". The requirements are ANDed.
                                 type: object
                             type: object
+                          metadata:
+                            properties:
+                              labels:
+                                additionalProperties:
+                                  type: string
+                                type: object
+                            type: object
                           orderedResources:
                             additionalProperties:
                               type: string
@@ -1154,6 +1163,13 @@ spec:
                                   to an element of matchExpressions, whose key field
                                   is "key", the operator is "In", and the values array
                                   contains only "value". The requirements are ANDed.
+                                type: object
+                            type: object
+                          metadata:
+                            properties:
+                              labels:
+                                additionalProperties:
+                                  type: string
                                 type: object
                             type: object
                           orderedResources:
