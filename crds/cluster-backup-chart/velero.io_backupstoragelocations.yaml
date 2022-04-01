@@ -1,364 +1,182 @@
-﻿kind: CustomResourceDefinition
-apiVersion: apiextensions.k8s.io/v1
-metadata:
-  name: backupstoragelocations.velero.io
-  uid: 17d046a2-36a8-48c5-8669-b41c9d6c223a
-  resourceVersion: '154130'
-  generation: 1
-  creationTimestamp: '2022-03-14T17:16:58Z'
-  labels:
-    operators.coreos.com/redhat-oadp-operator.openshift-adp: ''
-  annotations:
-    controller-gen.kubebuilder.io/version: v0.7.0
-    kubectl.kubernetes.io/last-applied-configuration: >
-      {"apiVersion":"apiextensions.k8s.io/v1","kind":"CustomResourceDefinition","metadata":{"annotations":{"controller-gen.kubebuilder.io/version":"v0.7.0"},"creationTimestamp":null,"name":"backupstoragelocations.velero.io"},"spec":{"group":"velero.io","names":{"kind":"BackupStorageLocation","listKind":"BackupStorageLocationList","plural":"backupstoragelocations","shortNames":["bsl"],"singular":"backupstoragelocation"},"scope":"Namespaced","versions":[{"additionalPrinterColumns":[{"description":"Backup
-      Storage Location status such as
-      Available/Unavailable","jsonPath":".status.phase","name":"Phase","type":"string"},{"description":"LastValidationTime
-      is the last time the backup store location was
-      validated","jsonPath":".status.lastValidationTime","name":"Last
-      Validated","type":"date"},{"jsonPath":".metadata.creationTimestamp","name":"Age","type":"date"},{"description":"Default
-      backup storage
-      location","jsonPath":".spec.default","name":"Default","type":"boolean"}],"name":"v1","schema":{"openAPIV3Schema":{"description":"BackupStorageLocation
-      is a location where Velero stores backup
-      objects","properties":{"apiVersion":{"description":"APIVersion defines the
-      versioned schema of this representation of an object. Servers should
-      convert recognized schemas to the latest internal value, and may reject
-      unrecognized values. More info:
-      https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources","type":"string"},"kind":{"description":"Kind
-      is a string value representing the REST resource this object represents.
-      Servers may infer this from the endpoint the client submits requests to.
-      Cannot be updated. In CamelCase. More info:
-      https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds","type":"string"},"metadata":{"type":"object"},"spec":{"description":"BackupStorageLocationSpec
-      defines the desired state of a Velero
-      BackupStorageLocation","properties":{"accessMode":{"description":"AccessMode
-      defines the permissions for the backup storage
-      location.","enum":["ReadOnly","ReadWrite"],"type":"string"},"backupSyncPeriod":{"description":"BackupSyncPeriod
-      defines how frequently to sync backup API objects from object storage. A
-      value of 0 disables
-      sync.","nullable":true,"type":"string"},"config":{"additionalProperties":{"type":"string"},"description":"Config
-      is for provider-specific configuration
-      fields.","type":"object"},"credential":{"description":"Credential contains
-      the credential information intended to be used with this
-      location","properties":{"key":{"description":"The key of the secret to
-      select from.  Must be a valid secret
-      key.","type":"string"},"name":{"description":"Name of the referent. More
-      info:
-      https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
-      TODO: Add other useful fields. apiVersion, kind,
-      uid?","type":"string"},"optional":{"description":"Specify whether the
-      Secret or its key must be
-      defined","type":"boolean"}},"required":["key"],"type":"object"},"default":{"description":"Default
-      indicates this location is the default backup storage
-      location.","type":"boolean"},"objectStorage":{"description":"ObjectStorageLocation
-      specifies the settings necessary to connect to a provider's object
-      storage.","properties":{"bucket":{"description":"Bucket is the bucket to
-      use for object storage.","type":"string"},"caCert":{"description":"CACert
-      defines a CA bundle to use when verifying TLS connections to the
-      provider.","format":"byte","type":"string"},"prefix":{"description":"Prefix
-      is the path inside a bucket to use for Velero storage.
-      Optional.","type":"string"}},"required":["bucket"],"type":"object"},"provider":{"description":"Provider
-      is the provider of the backup
-      storage.","type":"string"},"validationFrequency":{"description":"ValidationFrequency
-      defines how frequently to validate the corresponding object storage. A
-      value of 0 disables
-      validation.","nullable":true,"type":"string"}},"required":["objectStorage","provider"],"type":"object"},"status":{"description":"BackupStorageLocationStatus
-      defines the observed state of
-      BackupStorageLocation","properties":{"accessMode":{"description":"AccessMode
-      is an unused field. \n Deprecated: there is now an AccessMode field on the
-      Spec and this field will be removed entirely as of
-      v2.0.","enum":["ReadOnly","ReadWrite"],"type":"string"},"lastSyncedRevision":{"description":"LastSyncedRevision
-      is the value of the `metadata/revision` file in the backup storage
-      location the last time the BSL's contents were synced into the cluster. \n
-      Deprecated: this field is no longer updated or used for detecting changes
-      to the location's contents and will be removed entirely in
-      v2.0.","type":"string"},"lastSyncedTime":{"description":"LastSyncedTime is
-      the last time the contents of the location were synced into the
-      cluster.","format":"date-time","nullable":true,"type":"string"},"lastValidationTime":{"description":"LastValidationTime
-      is the last time the backup store location was validated the
-      cluster.","format":"date-time","nullable":true,"type":"string"},"phase":{"description":"Phase
-      is the current state of the
-      BackupStorageLocation.","enum":["Available","Unavailable"],"type":"string"}},"type":"object"}},"type":"object"}},"served":true,"storage":true,"subresources":{"status":{}}}]},"status":{"acceptedNames":{"kind":"","plural":""},"conditions":[],"storedVersions":[]}}
-    operatorframework.io/installed-alongside-6f4734ff8153bbc7: openshift-adp/oadp-operator.v1.0.1
-  managedFields:
-    - manager: catalog
-      operation: Update
-      apiVersion: apiextensions.k8s.io/v1
-      time: '2022-03-14T17:16:58Z'
-      fieldsType: FieldsV1
-      fieldsV1:
-        'f:metadata':
-          'f:annotations':
-            .: {}
-            'f:operatorframework.io/installed-alongside-6f4734ff8153bbc7': {}
-        'f:spec':
-          'f:conversion':
-            .: {}
-            'f:strategy': {}
-          'f:group': {}
-          'f:names':
-            'f:kind': {}
-            'f:listKind': {}
-            'f:plural': {}
-            'f:shortNames': {}
-            'f:singular': {}
-          'f:scope': {}
-          'f:versions': {}
-    - manager: kube-apiserver
-      operation: Update
-      apiVersion: apiextensions.k8s.io/v1
-      time: '2022-03-14T17:16:58Z'
-      fieldsType: FieldsV1
-      fieldsV1:
-        'f:status':
-          'f:acceptedNames':
-            'f:kind': {}
-            'f:listKind': {}
-            'f:plural': {}
-            'f:shortNames': {}
-            'f:singular': {}
-          'f:conditions':
-            'k:{"type":"Established"}':
-              .: {}
-              'f:lastTransitionTime': {}
-              'f:message': {}
-              'f:reason': {}
-              'f:status': {}
-              'f:type': {}
-            'k:{"type":"NamesAccepted"}':
-              .: {}
-              'f:lastTransitionTime': {}
-              'f:message': {}
-              'f:reason': {}
-              'f:status': {}
-              'f:type': {}
-      subresource: status
-    - manager: olm
-      operation: Update
-      apiVersion: apiextensions.k8s.io/v1
-      time: '2022-03-14T17:16:59Z'
-      fieldsType: FieldsV1
-      fieldsV1:
-        'f:metadata':
-          'f:labels':
-            .: {}
-            'f:operators.coreos.com/redhat-oadp-operator.openshift-adp': {}
-    - manager: kubectl-client-side-apply
-      operation: Update
-      apiVersion: apiextensions.k8s.io/v1
-      time: '2022-03-14T17:25:23Z'
-      fieldsType: FieldsV1
-      fieldsV1:
-        'f:metadata':
-          'f:annotations':
-            'f:controller-gen.kubebuilder.io/version': {}
-            'f:kubectl.kubernetes.io/last-applied-configuration': {}
-spec:
-  group: velero.io
-  names:
-    plural: backupstoragelocations
-    singular: backupstoragelocation
-    shortNames:
+﻿
+---
+  apiVersion: apiextensions.k8s.io/v1
+  kind: CustomResourceDefinition
+  metadata:
+    annotations:
+      controller-gen.kubebuilder.io/version: v0.7.0
+    creationTimestamp: null
+    name: backupstoragelocations.velero.io
+  spec:
+    group: velero.io
+    names:
+      kind: BackupStorageLocation
+      listKind: BackupStorageLocationList
+      plural: backupstoragelocations
+      shortNames:
       - bsl
-    kind: BackupStorageLocation
-    listKind: BackupStorageLocationList
-  scope: Namespaced
-  versions:
-    - name: v1
-      served: true
-      storage: true
+      singular: backupstoragelocation
+    scope: Namespaced
+    versions:
+    - additionalPrinterColumns:
+      - description: Backup Storage Location status such as Available/Unavailable
+        jsonPath: .status.phase
+        name: Phase
+        type: string
+      - description: LastValidationTime is the last time the backup store location was
+          validated
+        jsonPath: .status.lastValidationTime
+        name: Last Validated
+        type: date
+      - jsonPath: .metadata.creationTimestamp
+        name: Age
+        type: date
+      - description: Default backup storage location
+        jsonPath: .spec.default
+        name: Default
+        type: boolean
+      name: v1
       schema:
         openAPIV3Schema:
-          description: >-
-            BackupStorageLocation is a location where Velero stores backup
+          description: BackupStorageLocation is a location where Velero stores backup
             objects
-          type: object
           properties:
             apiVersion:
-              description: >-
-                APIVersion defines the versioned schema of this representation
-                of an object. Servers should convert recognized schemas to the
-                latest internal value, and may reject unrecognized values. More
-                info:
-                https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources
+              description: 'APIVersion defines the versioned schema of this representation
+                of an object. Servers should convert recognized schemas to the latest
+                internal value, and may reject unrecognized values. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#resources'
               type: string
             kind:
-              description: >-
-                Kind is a string value representing the REST resource this
-                object represents. Servers may infer this from the endpoint the
-                client submits requests to. Cannot be updated. In CamelCase.
-                More info:
-                https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds
+              description: 'Kind is a string value representing the REST resource this
+                object represents. Servers may infer this from the endpoint the client
+                submits requests to. Cannot be updated. In CamelCase. More info: https://git.k8s.io/community/contributors/devel/sig-architecture/api-conventions.md#types-kinds'
               type: string
             metadata:
               type: object
             spec:
-              description: >-
-                BackupStorageLocationSpec defines the desired state of a Velero
-                BackupStorageLocation
-              type: object
-              required:
-                - objectStorage
-                - provider
+              description: BackupStorageLocationSpec defines the desired state of a
+                Velero BackupStorageLocation
               properties:
                 accessMode:
-                  description: >-
-                    AccessMode defines the permissions for the backup storage
+                  description: AccessMode defines the permissions for the backup storage
                     location.
-                  type: string
                   enum:
-                    - ReadOnly
-                    - ReadWrite
-                backupSyncPeriod:
-                  description: >-
-                    BackupSyncPeriod defines how frequently to sync backup API
-                    objects from object storage. A value of 0 disables sync.
+                  - ReadOnly
+                  - ReadWrite
                   type: string
+                backupSyncPeriod:
+                  description: BackupSyncPeriod defines how frequently to sync backup
+                    API objects from object storage. A value of 0 disables sync.
                   nullable: true
+                  type: string
                 config:
-                  description: Config is for provider-specific configuration fields.
-                  type: object
                   additionalProperties:
                     type: string
-                credential:
-                  description: >-
-                    Credential contains the credential information intended to
-                    be used with this location
+                  description: Config is for provider-specific configuration fields.
                   type: object
-                  required:
-                    - key
+                credential:
+                  description: Credential contains the credential information intended
+                    to be used with this location
                   properties:
                     key:
-                      description: >-
-                        The key of the secret to select from.  Must be a valid
-                        secret key.
+                      description: The key of the secret to select from.  Must be a
+                        valid secret key.
                       type: string
                     name:
-                      description: >-
-                        Name of the referent. More info:
-                        https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
-                        TODO: Add other useful fields. apiVersion, kind, uid?
+                      description: 'Name of the referent. More info: https://kubernetes.io/docs/concepts/overview/working-with-objects/names/#names
+                        TODO: Add other useful fields. apiVersion, kind, uid?'
                       type: string
                     optional:
                       description: Specify whether the Secret or its key must be defined
                       type: boolean
+                  required:
+                  - key
+                  type: object
                 default:
-                  description: >-
-                    Default indicates this location is the default backup
+                  description: Default indicates this location is the default backup
                     storage location.
                   type: boolean
                 objectStorage:
-                  description: >-
-                    ObjectStorageLocation specifies the settings necessary to
-                    connect to a provider's object storage.
-                  type: object
-                  required:
-                    - bucket
+                  description: ObjectStorageLocation specifies the settings necessary
+                    to connect to a provider's object storage.
                   properties:
                     bucket:
                       description: Bucket is the bucket to use for object storage.
                       type: string
                     caCert:
-                      description: >-
-                        CACert defines a CA bundle to use when verifying TLS
-                        connections to the provider.
-                      type: string
+                      description: CACert defines a CA bundle to use when verifying
+                        TLS connections to the provider.
                       format: byte
+                      type: string
                     prefix:
-                      description: >-
-                        Prefix is the path inside a bucket to use for Velero
+                      description: Prefix is the path inside a bucket to use for Velero
                         storage. Optional.
                       type: string
+                  required:
+                  - bucket
+                  type: object
                 provider:
                   description: Provider is the provider of the backup storage.
                   type: string
                 validationFrequency:
-                  description: >-
-                    ValidationFrequency defines how frequently to validate the
-                    corresponding object storage. A value of 0 disables
-                    validation.
-                  type: string
+                  description: ValidationFrequency defines how frequently to validate
+                    the corresponding object storage. A value of 0 disables validation.
                   nullable: true
-            status:
-              description: >-
-                BackupStorageLocationStatus defines the observed state of
-                BackupStorageLocation
+                  type: string
+              required:
+              - objectStorage
+              - provider
               type: object
+            status:
+              description: BackupStorageLocationStatus defines the observed state of
+                BackupStorageLocation
               properties:
                 accessMode:
-                  description: |-
-                    AccessMode is an unused field. 
-                     Deprecated: there is now an AccessMode field on the Spec and this field will be removed entirely as of v2.0.
-                  type: string
+                  description: "AccessMode is an unused field. \n Deprecated: there
+                    is now an AccessMode field on the Spec and this field will be removed
+                    entirely as of v2.0."
                   enum:
-                    - ReadOnly
-                    - ReadWrite
+                  - ReadOnly
+                  - ReadWrite
+                  type: string
                 lastSyncedRevision:
-                  description: >-
-                    LastSyncedRevision is the value of the `metadata/revision`
-                    file in the backup storage location the last time the BSL's
-                    contents were synced into the cluster. 
-                     Deprecated: this field is no longer updated or used for detecting changes to the location's contents and will be removed entirely in v2.0.
+                  description: "LastSyncedRevision is the value of the `metadata/revision`
+                    file in the backup storage location the last time the BSL's contents
+                    were synced into the cluster. \n Deprecated: this field is no longer
+                    updated or used for detecting changes to the location's contents
+                    and will be removed entirely in v2.0."
                   type: string
                 lastSyncedTime:
-                  description: >-
-                    LastSyncedTime is the last time the contents of the location
+                  description: LastSyncedTime is the last time the contents of the location
                     were synced into the cluster.
-                  type: string
                   format: date-time
                   nullable: true
+                  type: string
                 lastValidationTime:
-                  description: >-
-                    LastValidationTime is the last time the backup store
+                  description: LastValidationTime is the last time the backup store
                     location was validated the cluster.
-                  type: string
                   format: date-time
                   nullable: true
+                  type: string
+                message:
+                  description: Message is a message about the backup storage location's
+                    status.
+                  type: string
                 phase:
                   description: Phase is the current state of the BackupStorageLocation.
-                  type: string
                   enum:
-                    - Available
-                    - Unavailable
+                  - Available
+                  - Unavailable
+                  type: string
+              type: object
+          type: object
+      served: true
+      storage: true
       subresources:
         status: {}
-      additionalPrinterColumns:
-        - name: Phase
-          type: string
-          description: Backup Storage Location status such as Available/Unavailable
-          jsonPath: .status.phase
-        - name: Last Validated
-          type: date
-          description: >-
-            LastValidationTime is the last time the backup store location was
-            validated
-          jsonPath: .status.lastValidationTime
-        - name: Age
-          type: date
-          jsonPath: .metadata.creationTimestamp
-        - name: Default
-          type: boolean
-          description: Default backup storage location
-          jsonPath: .spec.default
-  conversion:
-    strategy: None
-status:
-  conditions:
-    - type: NamesAccepted
-      status: 'True'
-      lastTransitionTime: '2022-03-14T17:16:58Z'
-      reason: NoConflicts
-      message: no conflicts found
-    - type: Established
-      status: 'True'
-      lastTransitionTime: '2022-03-14T17:16:58Z'
-      reason: InitialNamesAccepted
-      message: the initial names have been accepted
-  acceptedNames:
-    plural: backupstoragelocations
-    singular: backupstoragelocation
-    shortNames:
-      - bsl
-    kind: BackupStorageLocation
-    listKind: BackupStorageLocationList
-  storedVersions:
-    - v1
+  status:
+    acceptedNames:
+      kind: ""
+      plural: ""
+    conditions: []
+    storedVersions: []
