@@ -7,7 +7,6 @@ approvers:
 - jlpadilla
 - xrajesh
 - clyang82
-- ycao56
 - gparvin
 - ckandag
 - jnpacker
@@ -19,6 +18,7 @@ approvers:
 - leena-jawale
 - zhiweiyin318
 - qiujian16
+- mprahl
 
 reviewers:
 - nathanweatherly
