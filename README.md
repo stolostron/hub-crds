@@ -24,10 +24,3 @@ https://github.com/stolostron/search-chart
 
 https://github.com/stolostron/console-chart
 - user-preference-crd.yaml
-
-https://github.com/stolostron/multiclusterhub-operator (foundation/OCM)
-- view.open-cluster-management.io_managedclusterviews_crd.yaml
-- internal.open-cluster-management.io_managedclusterinfos_crd.yaml
-- inventory.open-cluster-management.io_baremetalassets_crd.yaml
-- action.open-cluster-management.io_managedclusteractions_crd.yaml 
-- imageregistry.open-cluster-management.io_managedclusterimageregistries.yaml
