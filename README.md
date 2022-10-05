@@ -15,5 +15,3 @@ https://github.com/stolostron/search-chart
 - search.open-cluster-management.io_searchcustomizations.yaml
 - search.open-cluster-management.io_searchoperators.yaml
 
-https://github.com/stolostron/console-chart
-- user-preference-crd.yaml
