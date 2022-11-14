@@ -1,5 +1,10 @@
 [comment]: # ( Copyright Contributors to the Open Cluster Management project )
 
+# Deprecated
+
+This repo is now deprecated. All hub crds are now part of the MultiClusterEngine and MultiClusterHub operator repos.
+
+
 # WORK IN PROGRESS
 
 We are in the process of enabling this repo for community contribution. See wiki [here](https://open-cluster-management.io/concepts/architecture/).
